@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# RetireReady Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fintech-inspired retirement planning dashboard built with **React, TypeScript, and Tailwind CSS**.  
+The app models employee contributions, employer match policies, and projected balances, with a clean participant/admin experience.
 
-Currently, two official plugins are available:
+> Portfolio project — no backend required. State is persisted locally for a realistic UX.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Participant Dashboard**
+  - Annual salary, contribution rate, and starting balance
+  - Live calculation of employee contributions and employer match
+  - 12-month projected balance estimate
 
-## Expanding the ESLint configuration
+- **Admin Mode**
+  - Toggle to edit employer match policy
+  - Match percentage and contribution cap controls
+  - Changes immediately reflected in participant calculations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Activity Log**
+  - Audit-style history of user and admin actions
+  - Stored in `localStorage` (persists across reloads)
+  - Clearable for testing/demo purposes
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Polished UI**
+  - Responsive layout
+  - Reusable UI components
+  - Tailwind-powered styling
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧠 Technical Highlights
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React + TypeScript for type-safe UI development
+- Domain-focused calculation utilities (contributions, match caps, projections)
+- Local persistence via `localStorage`
+- Clean component architecture (Card, Field, Toggle)
+- No backend — fast to run, easy to demo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Tech Stack
+
+- **Frontend:** React, TypeScript
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+- **State Persistence:** localStorage
+
+---
+
+## 🚀 Running Locally
+
+```bash
+npm install
+npm run dev
